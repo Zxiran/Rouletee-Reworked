@@ -23,7 +23,19 @@ function Angle()
 {   var x=document.getElementById('bet-amount').value;
     if( x==0)
         {  
-            var popup = document.getElementById("myPopup").innerHTML="Please Place a Bet ";  
+              
+            document.getElementById('myPopup').style.visibility='visible';
+            document.getElementById('myPopup').animate( {opacity:[0,0.5,1]},4000);
+            document.getElementById('bet-amount').addEventListener("focus",DisappearFn);
+
+            function DisappearFn(){
+                //console.log("hello");
+                document.getElementById('myPopup').style.visibility="hidden";
+            }
+            
+                
+                
+              
         }
 
     else
